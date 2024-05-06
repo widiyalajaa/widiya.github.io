@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scientific Number Validator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('file:///C:/Users/user/Downloads/WhatsApp%20Image%202024-05-06%20at%2009.40.04.jpeg'); /* Ganti 'one_piece_background.jpg' dengan nama file gambar Anda */
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+
+        #container {
+            background-color: rgba(255, 255, 255, 0.8); /* Warna latar belakang transparan untuk konten */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 90%;
+            max-width: 400px;
+        }
+
+        h1 {
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+
+        input {
+            padding: 10px;
+            font-size: 16px;
+            width: 100%;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+            border: 2px solid #007bff;
+            border-radius: 5px;
+            outline: none;
+            background-color: rgba(255, 255, 255, 0.8); /* Warna latar belakang transparan untuk input */
+        }
+
+        #result {
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        #studentInfo {
+            font-style: italic;
+            color: #6c757d;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Scientific Number Validator</h1>
+        <input type="text" id="inputField" placeholder="Enter a number in scientific notation">
+        <div id="result"></div>
+        <div id="studentInfo"> <strong>Widiya Lajaa - 230214060131</strong> </div>
+        <div id="studentInfo"> <strong>Informatics/computer science</strong></div>
+    </div>
+
+    <script>
+        const inputField = document.getElementById('inputField');
+        const resultDiv = document.getElementById('result');
+        const scientificNumberRegex = /^[-+]?(\d+(\.\d*)?|\.\d+)([eE][-+]?\d+)?$/;
+
+        function validateInput() {
+            const inputValue = inputField.value.trim();
+            if (scientificNumberRegex.test(inputValue)) {
+                resultDiv.textContent = 'Valid scientific number';
+                resultDiv.style.color = '#28a745'; /* Green color */
+            } else {
+                resultDiv.textContent = 'Invalid scientific number';
+                resultDiv.style.color = '#dc3545'; /* Red color */
+            }
+        }
+
+        inputField.addEventListener('input', validateInput);
+    </script>
+</body>
+</html>
